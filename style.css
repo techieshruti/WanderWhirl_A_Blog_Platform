@@ -296,7 +296,8 @@ hr{
 }
 
 .blog-container{
-  background-color: red;
+  /* background-color: rgb(215, 230, 243); */
+  border: 1px solid rgb(163, 162, 162);
   width: 50rem;
   height: 70rem;
   padding-top: 2rem;
@@ -323,7 +324,6 @@ hr{
 
 .blog-links{
     display:flex;
-    justify-content: center;
 }
 
 .blog-links ul{
@@ -335,10 +335,10 @@ hr{
 }
 .blog-links a{
     color: #1d848d;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .blog-links a:hover{
-    font-size: 2rem;
-    transition: 0.4s ease-in;
+    font-size: 1.5rem;
+    transition: 0.4s ease-in-out;
 }
