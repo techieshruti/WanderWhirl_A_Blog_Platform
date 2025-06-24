@@ -38,7 +38,7 @@
 .nav-links a:hover{
   font-size: 1.2rem;
   color: #1d848d;
-  transition: 0.2s ease-in;
+  transition: 0.2s ease-in-out;
 }
 
 .nav-actions i {
@@ -138,7 +138,6 @@
 }
 
 .box1-text{
-    color: #1d848d;
     padding-left: 1.5rem;
 }
 
@@ -146,11 +145,21 @@
     border-bottom: 2px solid black;
     width: 15rem;
     padding-bottom: 0.5rem;
+    color: #1d848d;
 }
 
 .box1-text i{
     padding-top: 0.7rem;
-    
+    color: rgb(95, 95, 95);
+}
+
+.box1-text i:hover{
+  color: #1d848d;
+  transition: 0.2s ease-in-out;
+}
+
+#red:hover{
+  color: red;
 }
 
 .box:hover{
