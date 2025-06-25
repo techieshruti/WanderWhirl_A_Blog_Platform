@@ -44,8 +44,8 @@
         <div class="nav-actions nav-links">
           <ul>
             <li>
-              <a href="#">
-                <i class="fa-solid fa-magnifying-glass"></i>
+              <a href="#" id="loginIcon">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
               </a>
             </li>
           </ul>
@@ -102,7 +102,7 @@
               <i class="fa-solid fa-message" style="padding-left: 0.5rem"></i>
               <i class="fa-solid fa-heart" id="red" style="padding-left: 0.5rem"></i>
               <p>Bali is a tropical paradise where lush rice terraces, sacred temples, and crystal-clear...</p>
-              <a href="">Read More...</a>
+              <a href="blog.html#Bali">Read More...</a>
             </div>
           </div>
           <div class="box">
@@ -115,7 +115,7 @@
               <i class="fa-solid fa-message" style="padding-left: 0.5rem"></i>
               <i class="fa-solid fa-heart" id="red" style="padding-left: 0.5rem"></i>
               <p>Cappadocia is a surreal dreamland of fairy chimneys, ancient cave dwellings, and...</p>
-              <a href="">Read More...</a>
+              <a href="blog.html#Cappadocia">Read More...</a>
             </div>
           </div>
           <div class="box">
@@ -128,7 +128,7 @@
               <i class="fa-solid fa-message" style="padding-left: 0.5rem"></i>
               <i class="fa-solid fa-heart" id="red" style="padding-left: 0.5rem"></i>
               <p>Tucked in the heart of the Himalayas, Leh is a high-altitude desert filled with monasteries,...</p>
-              <a href="">Read More...</a>
+              <a href="blog.html#Leh">Read More...</a>
             </div>
           </div>
       </div>
@@ -144,7 +144,7 @@
               <i class="fa-solid fa-message" style="padding-left: 0.5rem"></i>
               <i class="fa-solid fa-heart" id="red" style="padding-left: 0.5rem"></i>
               <p>Santorini is a postcard-perfect island painted in blue and white, where sunsets over the caldera...</p>
-              <a href="">Read More...</a>
+              <a href="blog.html#Santorini">Read More...</a>
             </div>
           </div>
           <div class="box">
@@ -157,7 +157,7 @@
               <i class="fa-solid fa-message" style="padding-left: 0.5rem"></i>
               <i class="fa-solid fa-heart" id="red" style="padding-left: 0.5rem"></i>
               <p>Gulmarg, the “Meadow of Flowers,” transforms into a snowy wonderland each winter. Known...</p>
-              <a href="">Read More...</a>
+              <a href="blog.html#Gulmarg">Read More...</a>
             </div>
           </div>
           <div class="box">
@@ -170,7 +170,7 @@
               <i class="fa-solid fa-message" style="padding-left: 0.5rem"></i>
               <i class="fa-solid fa-heart" id="red" style="padding-left: 0.5rem"></i><br>
               <p>The Aurora Borealis is nature’s own light show—a breathtaking dance of green, purple,...</p>
-              <a href="">Read More...</a>
+              <a href="blog.html#Aurora">Read More...</a>
             </div>
           </div>
         </div>
@@ -226,6 +226,37 @@
         <p>© 2025 by Shruti Chandra. Powered and secured by Wix</p>
       </div>
     </footer>
+
+    <!-- login signup -->
+     <!-- Modal Overlay -->
+<div class="modal-overlay" id="authModal">
+  <div class="modal-content">
+    <img src="/assets/logo.png" alt="WanderWhirl" class="modal-logo" />
+
+    <div class="form-toggle">
+      <button id="signupToggle" class="active">Sign Up</button>
+      <button id="loginToggle">Login</button>
+    </div>
+
+    <div class="form-wrapper">
+      <!-- Sign Up Form -->
+      <form id="signupForm" class="auth-form">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="auth-form hidden">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 
     <script src="app.js"></script>
   </body>
