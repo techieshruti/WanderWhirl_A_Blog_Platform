@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WanderWhirl</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- icon cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- icon cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <!-- <h1>WanderWhirl</h1> -->
+          <img src="/assets/logo.png" alt="WanderWhirl" />
+        </div>
+        <div class="nav-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#places">Places</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="myblogs.html">My Blogs</a></li>
+            <li><a href="#footer">Contact</a></li>
+          </ul>
+        </div>
+        <div class="nav-actions nav-links">
+          <ul>
+            <li>
+              <a href="#" id="loginIcon">
+                <li><a href="#" onclick="logout()" style="padding-right: 2rem;">Logout</a></li>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- personal blogs -->
+
+    <div id="userBlogSection">
+  <h2>Your Blog Posts</h2>
+  <form id="blogForm">
+    <input type="text" id="blogTitle" placeholder="Blog Title" required />
+    <input type="text" id="blogImage" placeholder="Image URL" required />
+    <textarea id="blogContent" placeholder="Write your blog here..." required></textarea>
+    <button type="submit">Publish Blog</button>
+  </form>
+
+  <div id="blogList"></div>
+</div>
+
+  </body>
+</html>

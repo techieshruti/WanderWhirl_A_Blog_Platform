@@ -195,8 +195,8 @@ html {
   line-height: 3.5rem;
 }
 
-.foot-head h1 {
-  font-size: 3rem;
+.foot-head h1,h3 {
+  font-weight: 400;
   font-style: italic;
 }
 
@@ -512,4 +512,36 @@ textarea{
 @keyframes fadeIn {
   from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+/* personal blogs */
+#userBlogSection {
+  padding: 2rem;
+  background: #fefefe;
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+#blogForm input,
+#blogForm textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#blogList .blog-card {
+  background: #fff;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-left: 5px solid #009688;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.blog-card button {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }

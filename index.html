@@ -180,14 +180,10 @@
     <!-- Footer section -->
     <footer>
       <div id="footer">
-        <div
-          class="foot-head"
-          style="font-family: Cormorant Garamond, serif !important"
-        >
+        <div class="foot-head">
           <i class="fa-regular fa-envelope"></i>
-          <h1>Don't Miss Out</h1>
-          <h3>Sign Up and Get All My Travel Stories!</h3>
-        </div>
+          <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">Don't Miss Out</h1>
+          <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Sign Up and Get All My Travel Stories!</h3></div>
         <div class="foot-form">
           <label for="email" style="margin-left: -17rem">Email*</label><br />
           <input
@@ -242,15 +238,15 @@
       <!-- Sign Up Form -->
       <form id="signupForm" class="auth-form">
         <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Password" required />
+        <input type="email" id="signupEmail" placeholder="Email" required />
+        <input type="password" id="signupPassword" placeholder="Password" required />
         <button type="submit">Sign Up</button>
       </form>
 
       <!-- Login Form -->
       <form id="loginForm" class="auth-form hidden">
-        <input type="email" placeholder="Email" required />
-        <input type="password" placeholder="Password" required />
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
         <button type="submit">Login</button>
       </form>
     </div>
@@ -258,6 +254,6 @@
 </div>
 
 
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </body>
 </html>
