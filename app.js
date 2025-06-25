@@ -113,82 +113,95 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
 });
 
 // -------------------------LOGOUT----------------------
-function logout() {
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "index.html"; // or login page
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const blogForm = document.getElementById("blogForm");
+  const blogList = document.getElementById("blogList");
+  const loggedInUser = localStorage.getItem("loggedInUser");
 
-// --------------------- BLOG PAGE CRUD (Only runs in blog.html) ---------------------
-const blogForm = document.getElementById("blogForm");
-const blogList = document.getElementById("blogList");
-const userBlogSection = document.getElementById("userBlogSection");
-let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
-let editIndex = null;
-const loggedInUser = localStorage.getItem("loggedInUser");
+  if (!loggedInUser) {
+    alert("Please login to create blogs.");
+    return;
+  }
 
-if (userBlogSection && loggedInUser) {
-  userBlogSection.style.display = "block";
-  renderBlogs();
-}
+  let blogs = JSON.parse(localStorage.getItem("blogs")) || [];
 
-if (blogForm) {
   blogForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const title = document.getElementById("blogTitle").value;
-    const image = document.getElementById("blogImage").value;
-    const content = document.getElementById("blogContent").value;
+    const title = document.getElementById("blogTitle").value.trim();
+    const image = document.getElementById("blogImage").value.trim();
+    const content = document.getElementById("blogContent").value.trim();
+
+    if (!title || !image || !content) {
+      alert("All fields are required.");
+      return;
+    }
 
     const newBlog = {
       title,
       image,
       content,
       user: loggedInUser,
+      createdAt: new Date().toISOString()
     };
 
-    if (editIndex !== null) {
-      blogs[editIndex] = newBlog;
-      editIndex = null;
-    } else {
-      blogs.push(newBlog);
-    }
-
+    blogs.push(newBlog);
     localStorage.setItem("blogs", JSON.stringify(blogs));
     blogForm.reset();
-    renderBlogs();
+    renderBlogs(); // Optional: shows blog below form
   });
-}
 
-function renderBlogs() {
-  blogList.innerHTML = "";
-  blogs.forEach((blog, index) => {
-    if (blog.user === loggedInUser) {
-      const blogCard = document.createElement("div");
-      blogCard.classList.add("blog-card");
-      blogCard.innerHTML = `
-        <h3>${blog.title}</h3>
-        <img src="${blog.image}" alt="${blog.title}" style="width:100%;max-height:200px;object-fit:cover"/>
-        <p>${blog.content}</p>
-        <button onclick="editBlog(${index})">Edit</button>
-        <button onclick="deleteBlog(${index})">Delete</button>
-      `;
-      blogList.appendChild(blogCard);
-    }
-  });
-}
-
-window.editBlog = function (index) {
-  const blog = blogs[index];
-  document.getElementById("blogTitle").value = blog.title;
-  document.getElementById("blogImage").value = blog.image;
-  document.getElementById("blogContent").value = blog.content;
-  editIndex = index;
-};
-
-window.deleteBlog = function (index) {
-  if (confirm("Are you sure you want to delete this blog?")) {
-    blogs.splice(index, 1);
-    localStorage.setItem("blogs", JSON.stringify(blogs));
-    renderBlogs();
+  function renderBlogs() {
+    blogList.innerHTML = "";
+    blogs.forEach((blog) => {
+      if (blog.user === loggedInUser) {
+        const blogCard = document.createElement("div");
+        blogCard.innerHTML = `
+          <h3>${blog.title}</h3>
+          <img src="${blog.image}" width="200" />
+          <p>${blog.content}</p>
+        `;
+        blogList.appendChild(blogCard);
+      }
+    });
   }
-};
+
+  renderBlogs();
+});
+
+
+// -------------------------user blog content-----------------------
+// ------------------ RENDER USER BLOGS on blogs.html ONLY ------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const userBlogsContainer = document.getElementById("userBlogs");
+
+  // Only run this if the container exists (meaning we're on blogs.html)
+  if (!userBlogsContainer) return;
+
+  const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+  if (blogs.length === 0) {
+    userBlogsContainer.innerHTML = "<p style='text-align:center;'>No user blogs yet.</p>";
+    return;
+  }
+
+  blogs.forEach((blog) => {
+    const blogCard = document.createElement("div");
+    blogCard.className = "blog-content";
+    blogCard.innerHTML = `
+      <div class="blog-container">
+        <span>${blog.user} | Just now | 2 min read</span>
+        <h1 style="font-family: Georgia, 'Times New Roman', Times, serif">
+          ${blog.title}
+        </h1>
+        <div class="blog-img">
+          <img src="${blog.image}" alt="${blog.title}" />
+        </div>
+        <div class="blog-text">
+          <p>${blog.content}</p>
+        </div>
+      </div>
+    `;
+    userBlogsContainer.appendChild(blogCard);
+  });
+});

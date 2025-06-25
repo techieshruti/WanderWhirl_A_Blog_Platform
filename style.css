@@ -526,6 +526,11 @@ textarea{
   max-width: 800px;
 }
 
+#userBlogsSection{
+  margin-left: 15rem;
+  margin-bottom: 2rem;
+}
+
 #blogForm input,
 #blogForm textarea {
   width: 100%;

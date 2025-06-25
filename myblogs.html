@@ -58,15 +58,19 @@
 <h1>Welcome to Your Blog Dashboard</h1>
     <div id="userBlogSection">
   <h2>Your Blog Posts</h2>
+  <p>Start documenting your amazing journeys, travel tips, and hidden gems. Your personal travel diary awaits you.</p>
   <form id="blogForm">
-    <input type="text" id="blogTitle" placeholder="Blog Title" required />
-    <input type="text" id="blogImage" placeholder="Image URL" required />
-    <textarea id="blogContent" placeholder="Write your blog here..." required></textarea>
-    <button type="submit">Publish Blog</button>
-  </form>
+  <input type="text" id="blogTitle" placeholder="Blog Title" required />
+  <input type="url" id="blogImage" placeholder="Image URL" required />
+  <textarea id="blogContent" placeholder="Write your blog here..." required></textarea>
+  <button type="submit" class="comment-action">Publish Blog</button>
+</form>
+
 
   <div id="blogList"></div>
 </div>
 
+
+<script src="app.js"></script>
   </body>
 </html>
