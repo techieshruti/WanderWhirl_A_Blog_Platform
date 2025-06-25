@@ -195,7 +195,7 @@ html {
   line-height: 3.5rem;
 }
 
-.foot-head h1,h3 {
+.foot-head h1 {
   font-weight: 400;
   font-style: italic;
 }
@@ -218,7 +218,6 @@ html {
   width: 20rem;
   border: none;
   border-bottom: 2px solid rgb(90, 87, 87);
-  background-color: rgb(216, 230, 245);
   padding: 0.8rem;
 }
 
@@ -330,6 +329,10 @@ hr{
   padding-top: 7rem;
   margin-right: 2rem;
   padding-bottom: 2rem;
+}
+
+.blog-text h3{
+  font-style: normal;
 }
 
 .blog-links{

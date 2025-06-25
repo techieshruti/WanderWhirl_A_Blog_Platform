@@ -526,6 +526,46 @@
     </div>
 <br><br>
 
+<!-- user created blogs -->
+ <!-- User Blogs Section -->
+<div id="userBlogsSection">
+  <h2 style="text-align:center; font-family: Georgia, serif;">📝 Community Travel Stories</h2>
+  <div id="userBlogs" class="blog-container"></div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const userBlogsContainer = document.getElementById("userBlogs");
+
+    const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+    if (blogs.length === 0) {
+      userBlogsContainer.innerHTML = "<p style='text-align:center;'>No user blogs yet.</p>";
+      return;
+    }
+
+    blogs.forEach((blog) => {
+      const blogCard = document.createElement("div");
+      blogCard.className = "blog-content";
+      blogCard.innerHTML = `
+        <div class="blog-container">
+          <span>${blog.user} | Just now | 2 min read</span>
+          <h1 style="font-family: Georgia, 'Times New Roman', Times, serif">
+            ${blog.title}
+          </h1>
+          <div class="blog-img">
+            <img src="${blog.image}" alt="${blog.title}" />
+          </div>
+          <div class="blog-text">
+            <p>${blog.content}</p>
+          </div>
+        </div>
+      `;
+      userBlogsContainer.appendChild(blogCard);
+    });
+  });
+</script>
+
+
     <!-- Footer section -->
     <footer>
       <div id="footer">
