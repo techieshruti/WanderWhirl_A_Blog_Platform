@@ -296,10 +296,10 @@ hr{
 }
 
 .blog-container{
-  /* background-color: rgb(215, 230, 243); */
   border: 1px solid rgb(163, 162, 162);
+  border-radius: 0.8rem;
   width: 50rem;
-  height: 70rem;
+  height: 80rem;
   padding-top: 2rem;
   padding-left: 4rem;
 }
@@ -320,10 +320,12 @@ hr{
 .blog-text{
   padding-top: 7rem;
   margin-right: 2rem;
+  padding-bottom: 2rem;
 }
 
 .blog-links{
     display:flex;
+    border-top: 2px solid gray;
 }
 
 .blog-links ul{
@@ -334,11 +336,24 @@ hr{
     margin-bottom: 1.5rem;
 }
 .blog-links a{
-    color: #1d848d;
+    color: rgb(86, 85, 85);
     font-size: 1.2rem;
 }
 
 .blog-links a:hover{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     transition: 0.4s ease-in-out;
+}
+
+.activity i{
+  font-size: 1.3rem;
+  color: rgb(86, 85, 85);
+  padding-bottom: 2rem;
+}
+
+.activity i:hover{
+  color: #1d848d;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: 0.2s ease-in-out;
 }
