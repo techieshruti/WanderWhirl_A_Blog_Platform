@@ -299,7 +299,7 @@ hr{
   border: 1px solid rgb(163, 162, 162);
   border-radius: 0.8rem;
   width: 50rem;
-  height: 80rem;
+  height: 100rem;
   padding-top: 2rem;
   padding-left: 4rem;
 }
@@ -355,4 +355,65 @@ hr{
   cursor: pointer;
   font-size: 1.5rem;
   transition: 0.2s ease-in-out;
+}
+
+.comment-box{
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 0.8rem;
+  width: 42rem;
+  padding: 0.5rem 2rem;
+}
+
+.comment-box h3{
+  font-style: italic;
+  color: black;
+  border-bottom: 1px solid rgb(170, 170, 170);
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  font-weight: 300;
+}
+
+.comment-box textarea{
+  margin: 2rem;
+  margin-left: 0.3rem;
+  border: 1px solid rgb(170, 170, 170);
+}
+
+textarea{
+  padding-left: 0.8rem;
+  padding-top: 0.8rem;
+  font-style: italic;
+}
+
+.comment-box textarea:hover{
+  border: 1px solid rgb(56, 56, 56);
+}
+
+.comment-action{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.comment-action a{
+  text-decoration: none;
+  color: black;
+}
+
+.comment-action a:hover{
+  color: grey;
+  font-size: 1.03rem;
+}
+
+.comment-action button{
+  border: none;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  background-color: grey;
+  margin-left: 0.5rem;
+}
+
+.comment-action button:hover{
+  background-color: rgb(54, 54, 54);
+  cursor: pointer;
 }
