@@ -341,8 +341,6 @@ hr{
 }
 
 .blog-links a:hover{
-    font-size: 1.4rem;
-    transition: 0.4s ease-in-out;
     color: #1d848d;
 }
 
