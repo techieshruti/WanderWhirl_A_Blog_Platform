@@ -362,12 +362,14 @@ hr{
   transition: 0.2s ease-in-out;
 }
 
+/* comment box */
 .comment-box{
   border: 1px solid rgb(170, 170, 170);
   border-radius: 0.8rem;
   width: 42rem;
   padding: 0.5rem 2rem;
   display:none;
+  margin-bottom: 1.5rem;
 }
 
 .comment-box h3{

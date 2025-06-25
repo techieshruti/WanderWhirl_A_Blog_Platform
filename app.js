@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const blogContainer = icon.closest(".blog-container");
         const commentBox = blogContainer.querySelector(".comment-box");
         commentBox.style.display = "block";
-        blogContainer.style.height = "115rem"; // Adjust to fit comment box
+        blogContainer.style.height = "98rem"; // Adjust to fit comment box
       });
     });
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const blogContainer = btn.closest(".blog-container");
         const commentBox = blogContainer.querySelector(".comment-box");
         commentBox.style.display = "none";
-        blogContainer.style.height = "100rem"; // Reset to original
+        blogContainer.style.height = "80rem"; // Reset to original
       });
     });
   });
