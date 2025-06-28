@@ -294,45 +294,57 @@ hr{
 .blog-content{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .blog-container{
-  border: 1px solid rgb(163, 162, 162);
+  border: 1px solid #ccc;
   border-radius: 0.8rem;
   width: 50rem;
-  height: 80rem;
-  padding-top: 2rem;
-  padding-left: 4rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding-left: 2.3rem;
 }
 
-.blog-container {
+/* .blog-container {
   overflow: hidden;
   transition: height 0.3s ease;
-}
+} */
 
 .blog-container h1{
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-  font-size: 3rem;
+  padding: 1rem 0;
+  font-size: 2.5rem;
   font-style: italic;
-  font-weight: 550;
+  font-weight: 600;
 }
 
-.blog-img{
-  width: 46rem;
-  height: 25rem;
+.blog-img img{
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
 }
 
 .blog-text{
-  padding-top: 7rem;
-  margin-right: 2rem;
-  padding-bottom: 2rem;
+   padding-top: 2rem;
+  color: black;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 .blog-text h3{
   font-style: normal;
+}
+
+.blog-text ul{
+  padding-left: 2.3rem;
 }
 
 .blog-links{
@@ -345,8 +357,9 @@ hr{
     display: flex;
     gap: 1.4rem;
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
+
 .blog-links a{
     color: rgb(86, 85, 85);
     font-size: 1.2rem;
@@ -359,7 +372,8 @@ hr{
 .activity i{
   font-size: 1.3rem;
   color: rgb(86, 85, 85);
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
 }
 
 .activity i:hover{
@@ -518,19 +532,11 @@ textarea{
 }
 
 /* personal blogs */
-#userBlogSection {
-  padding: 2rem;
-  background: #fefefe;
-  border-radius: 10px;
-  margin: 2rem auto;
-  max-width: 800px;
+#userBlogsSection {
+  margin-left: 12rem;
+  max-width: 60rem;
 }
-
-#userBlogsSection{
-  margin-left: 15rem;
-  margin-bottom: 2rem;
-}
-
+ 
 #blogForm input,
 #blogForm textarea {
   width: 100%;
@@ -552,4 +558,17 @@ textarea{
   margin-right: 1rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
+}
+
+#writing-tips{
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  padding: 2rem 0;
+}
+
+#writing-tips h2{
+  color: #1d848d;
+  font-style: italic;
+  font-weight: 500;
 }

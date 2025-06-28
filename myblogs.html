@@ -59,10 +59,15 @@
     <div id="userBlogSection">
   <h2>Your Blog Posts</h2>
   <p>Start documenting your amazing journeys, travel tips, and hidden gems. Your personal travel diary awaits you.</p>
+  <h3>Create a New Blog Post</h3>
   <form id="blogForm">
-  <input type="text" id="blogTitle" placeholder="Blog Title" required />
-  <input type="url" id="blogImage" placeholder="Image URL" required />
-  <textarea id="blogContent" placeholder="Write your blog here..." required></textarea>
+  <input type="text" id="blogTitle" placeholder="e.g. Trekking Through Himachal" required />
+
+   <label for="blogImage">Add a cover image:</label>
+    <input type="text" id="blogImage" placeholder="Paste image URL here" required />
+
+  <label for="blogContent">Your Story:</label>
+  <textarea id="blogContent" rows="8" placeholder="Share your experience..."></textarea>
   <button type="submit" class="comment-action">Publish Blog</button>
 </form>
 

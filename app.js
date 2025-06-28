@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const commentBox = blogContainer.querySelector(".comment-box");
       commentBox.style.display = "block";
       blogContainer.style.height = "98rem";
-      blogContainer.style.paddingBottom = "1rem"; // ✅ add bottom padding
+      blogContainer.style.paddingBottom = "1rem";
     });
   });
 
@@ -25,12 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // --------------------- PUBLISH COMMENT ---------------------
-const publishButtons = document.querySelectorAll(".comment-action button");
-
-publishButtons.forEach((button) => {
+document.querySelectorAll(".comment-action button").forEach((button) => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
-
     const commentBox = button.closest(".comment-box");
     const textarea = commentBox.querySelector("textarea");
     const commentText = textarea.value.trim();
@@ -43,7 +40,6 @@ publishButtons.forEach((button) => {
       newComment.style.border = "1px solid #ccc";
       newComment.style.borderRadius = "5px";
       newComment.style.backgroundColor = "#f9f9f9";
-
       commentBox.parentElement.appendChild(newComment);
       textarea.value = "";
     }
@@ -57,67 +53,63 @@ const loginToggle = document.getElementById("loginToggle");
 const signupForm = document.getElementById("signupForm");
 const loginForm = document.getElementById("loginForm");
 
-document.getElementById("loginIcon").addEventListener("click", () => {
+document.getElementById("loginIcon")?.addEventListener("click", () => {
   authModal.style.display = "flex";
 });
 
-signupToggle.addEventListener("click", () => {
+signupToggle?.addEventListener("click", () => {
   signupForm.classList.remove("hidden");
   loginForm.classList.add("hidden");
   signupToggle.classList.add("active");
   loginToggle.classList.remove("active");
 });
 
-loginToggle.addEventListener("click", () => {
+loginToggle?.addEventListener("click", () => {
   loginForm.classList.remove("hidden");
   signupForm.classList.add("hidden");
   loginToggle.classList.add("active");
   signupToggle.classList.remove("active");
 });
 
-authModal.addEventListener("click", (e) => {
+authModal?.addEventListener("click", (e) => {
   if (e.target === authModal) {
     authModal.style.display = "none";
   }
 });
 
 // --------------------- SIGNUP FUNCTION ---------------------
-document.getElementById("signupForm").addEventListener("submit", (e) => {
+signupForm?.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const email = document.getElementById("signupEmail").value;
   const password = document.getElementById("signupPassword").value;
-
   localStorage.setItem(email, JSON.stringify({ password }));
-
   alert("Signup successful! Please log in.");
   signupForm.reset();
   loginToggle.click(); // switch to login tab
 });
 
 // --------------------- LOGIN FUNCTION ---------------------
-document.getElementById("loginForm").addEventListener("submit", (e) => {
+loginForm?.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
-
   const storedUser = JSON.parse(localStorage.getItem(email));
-
   if (storedUser && storedUser.password === password) {
     localStorage.setItem("loggedInUser", email);
-    window.location.href = "myblogs.html"; // ✅ redirect to blog page
+    window.location.href = "myblogs.html";
   } else {
     alert("Invalid credentials!");
   }
 });
 
-// -------------------------LOGOUT----------------------
+// --------------------- BLOG CREATION (myblogs.html only) ---------------------
 document.addEventListener("DOMContentLoaded", () => {
   const blogForm = document.getElementById("blogForm");
   const blogList = document.getElementById("blogList");
-  const loggedInUser = localStorage.getItem("loggedInUser");
 
+  if (!blogForm || !blogList) return; // Not on myblogs.html
+
+  const loggedInUser = localStorage.getItem("loggedInUser");
   if (!loggedInUser) {
     alert("Please login to create blogs.");
     return;
@@ -148,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     blogs.push(newBlog);
     localStorage.setItem("blogs", JSON.stringify(blogs));
     blogForm.reset();
-    renderBlogs(); // Optional: shows blog below form
+    renderBlogs();
   });
 
   function renderBlogs() {
@@ -169,23 +161,26 @@ document.addEventListener("DOMContentLoaded", () => {
   renderBlogs();
 });
 
-
-// -------------------------user blog content-----------------------
-// ------------------ RENDER USER BLOGS on blogs.html ONLY ------------------
+// ------------------ SHOW USER BLOGS on blogs.html ONLY ------------------
 document.addEventListener("DOMContentLoaded", () => {
   const userBlogsContainer = document.getElementById("userBlogs");
+  const userBlogsSection = document.getElementById("userBlogsSection");
 
-  // Only run this if the container exists (meaning we're on blogs.html)
-  if (!userBlogsContainer) return;
+  if (!userBlogsContainer || !userBlogsSection) return; // Not on blogs.html
 
   const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+  const loggedInUser = localStorage.getItem("loggedInUser");
 
-  if (blogs.length === 0) {
-    userBlogsContainer.innerHTML = "<p style='text-align:center;'>No user blogs yet.</p>";
+  const userBlogs = blogs.filter(blog => blog.user === loggedInUser);
+
+  if (userBlogs.length === 0) {
+    userBlogsSection.style.display = "none";
     return;
   }
 
-  blogs.forEach((blog) => {
+  userBlogsSection.style.display = "block";
+
+  userBlogs.forEach((blog) => {
     const blogCard = document.createElement("div");
     blogCard.className = "blog-content";
     blogCard.innerHTML = `
