@@ -1,4 +1,7 @@
 // --------------------- COMMENT FUNCTIONALITY ---------------------
+
+let editIndex = null;
+
 document.addEventListener("DOMContentLoaded", () => {
   const commentIcons = document.querySelectorAll(".comment-icon");
   const cancelButtons = document.querySelectorAll(".cancel-comment");
@@ -195,8 +198,68 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="blog-text">
           <p>${blog.content}</p>
         </div>
+        <div class="blog-actions">
+      <button class="edit-btn">Edit</button>
+      <button class="delete-btn">Delete</button>
+    </div>
       </div>
     `;
     userBlogsContainer.appendChild(blogCard);
   });
+});
+
+// Add Delete Functionality
+userBlogsContainer.querySelectorAll(".delete-btn").forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    if (confirm("Are you sure you want to delete this blog?")) {
+      blogs.splice(index, 1); // remove from array
+      localStorage.setItem("blogs", JSON.stringify(blogs));
+      window.location.reload(); // refresh the page
+    }
+  });
+});
+
+// Update edit button functionality
+userBlogsContainer.querySelectorAll(".edit-btn").forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    const blog = blogs[index];
+    document.getElementById("blogTitle").value = blog.title;
+    document.getElementById("blogImage").value = blog.image;
+    document.getElementById("blogContent").value = blog.content;
+    editIndex = index;
+    window.scrollTo(0, 0); // scroll to form
+  });
+});
+
+// Modify form submit to handle edit
+blogForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const title = document.getElementById("blogTitle").value.trim();
+  const image = document.getElementById("blogImage").value.trim();
+  const content = document.getElementById("blogContent").value.trim();
+
+  if (!title || !image || !content) {
+    alert("All fields are required.");
+    return;
+  }
+
+  const blogData = {
+    title,
+    image,
+    content,
+    user: loggedInUser,
+    createdAt: new Date().toISOString()
+  };
+
+  if (editIndex !== null) {
+    blogs[editIndex] = blogData;
+    editIndex = null;
+  } else {
+    blogs.push(blogData);
+  }
+
+  localStorage.setItem("blogs", JSON.stringify(blogs));
+  blogForm.reset();
+  renderBlogs(); // Refresh blog list
 });

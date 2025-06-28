@@ -572,3 +572,23 @@ textarea{
   font-style: italic;
   font-weight: 500;
 }
+
+/* CRUD  */
+.blog-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.blog-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #1d848d;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.blog-actions button:hover {
+  background-color: #155c63;
+}
