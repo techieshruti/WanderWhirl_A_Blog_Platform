@@ -259,7 +259,7 @@ html {
 
 hr{
     width: 75rem;
-    margin-left: 4.5rem;
+    margin: 2rem auto;
     border: none;
     height: 0.2rem;
     background-color: rgb(90, 87, 87);
