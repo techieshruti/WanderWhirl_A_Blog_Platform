@@ -6,9 +6,9 @@
 
 ## 📸 Screenshots
 
-| Start Screen | Blog Create | Blog View |
+| Start Screen | Places | Blogs View | SignUp Page | Blog Creation Page | 
 |--------------|-------------|-----------|
-| ![Start](./assets/screenshots/startscreen.png) | ![Quiz](./assets/screenshots/createscreen.png) | ![Result](./assets/screenshots/blogscreen.png) |
+| ![Start](./assets/screenshots/start.PNG) | ![places](./assets/screenshots/places.PNG) | ![blogs](./assets/screenshots/blogs.PNG) | ![signup](./assets/screenshots/signup.PNG) | ![blogcreation](./assets/screenshots/blogcreation.PNG) |
 
 ---
 
