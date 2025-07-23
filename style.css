@@ -63,7 +63,7 @@ html {
     margin-top: 3rem;
     width: 380rem;
     height: 37rem;
-    background-image: url(/assets/image3.jpg);
+    background-image: url(./assets/image3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -71,7 +71,7 @@ html {
 
 .frame2{
     /* background-image:linear-gradient(rgb(216, 230, 245), white); */
-    background-image: url(/assets/image1.jpg);
+    background-image: url(./assets/image1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
