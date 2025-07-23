@@ -531,9 +531,27 @@ textarea{
 }
 
 /* personal blogs */
-#userBlogsSection {
+.personalBlogs{
+  margin: 0;
+  padding: 0;
+  padding-top: 5rem;
+}
+
+.personalBlogs h1{
+  text-align: center;
+}
+.userBlogsSection {
   margin-left: 12rem;
   max-width: 60rem;
+  margin: 2rem;
+}
+
+.userBlogsSection p{
+  padding-bottom: 1rem;
+}
+
+.userBlogsSection h2,h3{
+  color: #1d848d;
 }
  
 #blogForm input,
@@ -543,6 +561,20 @@ textarea{
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+.publish{
+    background-color: rgb(216, 230, 245);
+    padding: 0.3rem 2rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 0.2rem solid #1d848d;
+}
+.publish:hover{
+    background-color: #1d848d;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in;
 }
 
 #blogList .blog-card {

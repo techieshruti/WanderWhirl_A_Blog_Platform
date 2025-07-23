@@ -30,22 +30,21 @@
       <nav class="navbar">
         <div class="logo">
           <!-- <h1>WanderWhirl</h1> -->
-          <img src="/assets/logo.png" alt="WanderWhirl" />
+          <img src="./assets/logo.png" alt="WanderWhirl" />
         </div>
         <div class="nav-links">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#places">Places</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#places">Places</a></li>
             <li><a href="blog.html">Blogs</a></li>
             <li><a href="myblogs.html">My Blogs</a></li>
-            <li><a href="#footer">Contact</a></li>
+            <li><a href="index.html#footer">Contact</a></li>
           </ul>
         </div>
         <div class="nav-actions nav-links">
           <ul>
             <li>
-              <a href="#" id="loginIcon">
                 <li><a href="#" style="padding-right: 2rem;">Logout</a></li>
               </a>
             </li>
@@ -55,8 +54,9 @@
     </header>
 
     <!-- personal blogs -->
-<h1>Welcome to Your Blog Dashboard</h1>
-    <div id="userBlogSection">
+<div class="personalBlogs">
+  <h1>Welcome to Your Blog Dashboard</h1>
+    <div class="userBlogsSection">
   <h2>Your Blog Posts</h2>
   <p>Start documenting your amazing journeys, travel tips, and hidden gems. Your personal travel diary awaits you.</p>
   <h3>Create a New Blog Post</h3>
@@ -68,9 +68,10 @@
 
   <label for="blogContent">Your Story:</label>
   <textarea id="blogContent" rows="8" placeholder="Share your experience..."></textarea>
-  <button type="submit" class="comment-action">Publish Blog</button>
+  <button type="submit" class="publish">Publish Blog</button>
 </form>
 
+</div>
 
   <div id="blogList"></div>
 </div>
