@@ -44,6 +44,9 @@ WanderWhirl/
 │ ├── logo.png
 │ ├── login-icon.png
 │ └── ... (other images)
+| ├── screenshots/
+|   ├── start.png
+|   └── ... (other images)
 ├── style.css # All styling
 ├── script.js # All DOM and logic
 └── README.md # This file
@@ -67,7 +70,7 @@ WanderWhirl/
 
 ## 🌐 Live Preview
 
-> 📍 [View Live on GitHub Pages](https://techieshruti.github.io/Brainwave_Matrix_Intern_Task_2/)
+> 📍 [View Live on GitHub Pages](https://techieshruti.github.io/WanderWhirl_A_Blog_Platform/)
 
 ---
 
